@@ -1,26 +1,24 @@
 1;
 
-Iapp = 1 * 1e-9  ; %nA
-Cm = 500 * 1e-12 ; %pF
-gl = 25 * 1e-9; %nS
-Vl = -70 * 1e-3; %mV
-Vtita = -54 * 1e-3; %mV
-Vcero = -60 * 1e-3; %mV
-
-tv = Cm/ gl ; %ns
+% inicializar parametros y pasar a las mismas unidades (A V Ohm Farad s)
+Iapp = 1 * 1e-9  ; 
+Cm = 500 * 1e-12 ; 
+gl = 25 * 1e-9; 
+Vl = -70 * 1e-3; 
+Vtita = -54 * 1e-3; 
+Vcero = -60 * 1e-3; 
+tv = Cm/ gl ; 
 Vinf = Vl  + (Iapp/gl) ;
-
-
 V(1) = Vl ;
-dt = 0.2 * 1e-3; %ms
+dt = 0.2 * 1e-3; 
 count = 0 ;
 i = 1 ;
 
+
+% iterar hasta conseguir 10 disparos
 while count < 10
 	i = i + 1;
 	V(i) = Vinf + (V(i-1) -Vinf) * exp(-(dt/tv));
-	printf("time %d V %f count %d\n",i,V(i),count);
-	fflush(stdout);
 	if V(i) > Vtita
 		V(i+1) = Vcero;
 		i = i + 1;
@@ -30,15 +28,17 @@ while count < 10
 	 
 end
 
+
+% Corto corriente
 Vinf = Vl;
 
 epsilon = 1e-5;
 
+
+% Iterar hasta volver al reposo
 while V(i) > Vl + epsilon
 	i = i + 1;
 	V(i) = Vinf + (V(i-1) -Vinf) * exp(-(dt/tv));
-	printf("time %d V %f\n",i,V(i));
-	fflush(stdout);
 
 end
 
