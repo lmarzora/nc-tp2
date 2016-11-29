@@ -1,7 +1,6 @@
 1;
-%graphics_toolkit('gnuplot');
 [v,d,w,ur,firstv,k] = ej3();
-
+k
 x = [0:50] * 5;
 markerSize = 10;
 
