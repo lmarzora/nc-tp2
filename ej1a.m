@@ -23,4 +23,4 @@ title('Tasa de disparo en función de la corriente', 'fontsize', 14)
 xlabel('Intensidad de corriente (mA)', 'fontsize',12);
 ylabel('Tasa de disparo (Hz)', 'fontsize',12);
 
-print('tasa1.jpg');
+

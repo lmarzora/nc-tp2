@@ -44,25 +44,25 @@ ylabel('v(t)','fontsize',12);
 
 subplot(5,2,7);
 plot(x(2:end),diff(firstv(1:51)),'.','linewidth',2,'markersize',markerSize);
-title('diferencia de predicción de recompensas futuras','fontsize',14);
+title('diferencia de predicción de recompenzas futuras','fontsize',14);
 xlabel('tiempo (ms)','fontsize',12);
 ylabel('diff(v)','fontsize',12);
 
 subplot(5,2,8);
 plot(x(2:end),diff(v(1:51)),'.','linewidth',2,'markersize',markerSize);
-title('diferencia de predicción de recompensas futuras','fontsize',14);
+title('diferencia de predicción de recompenzas futuras','fontsize',14);
 xlabel('tiempo (ms)','fontsize',12);
 ylabel('diff(v)','fontsize',12);
 
 subplot(5,2,9);
 plot(x(2:end),d(1:50,1),'.','linewidth',2,'markersize',markerSize);
-title('error de predicción','fontsize',14);
+title('error de prediccion','fontsize',14);
 xlabel('tiempo (ms)','fontsize',12);
 ylabel('delta','fontsize',12);
 
 subplot(5,2,10);
 plot(x(2:end),d(1:50,200),'.','linewidth',2,'markersize',markerSize);
-title('error de predicción','fontsize',14);
+title('error de prediccion','fontsize',14);
 xlabel('tiempo (ms)','fontsize',12);
 ylabel('delta','fontsize',12);
 

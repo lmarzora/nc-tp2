@@ -8,7 +8,7 @@ function [v,d,w,ur,firstv] = ej3()
 	d = zeros(51,tries);
 
 	epsilon = 0.2;
-	lambda = 0.5;
+	lambda = 0.99;
 for k = 1 : tries
 	for t = 2:51
 		ur(t) = lambda * ur(t-1) + (1-lambda) * u(t);
@@ -23,17 +23,5 @@ end
 
 %surf(5*(1:50),1:tries,d');
 
-end
-
-
-	
-function stimulus = u(t)
-	t = (t-1)*5;
-	stimulus = (t==100);
-end
-
-function reward = r(t)
-	t = (t-1) * 5;
-	reward = (t >=200 & t <= 210) * 0.2;
 end
 	
