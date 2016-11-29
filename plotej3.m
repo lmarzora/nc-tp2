@@ -1,6 +1,6 @@
 1;
 %graphics_toolkit('gnuplot');
-[v,d,w,ur,firstv] = ej3();
+[v,d,w,ur,firstv,k] = ej3();
 
 x = [0:50] * 5;
 markerSize = 10;
@@ -61,7 +61,7 @@ xlabel('tiempo (ms)','fontsize',12);
 ylabel('delta','fontsize',12);
 
 subplot(5,2,10);
-plot(x(2:end),d(1:50,200),'.','linewidth',2,'markersize',markerSize);
+plot(x(2:end),d(1:50,end),'.','linewidth',2,'markersize',markerSize);
 title('error de predicción','fontsize',14);
 xlabel('tiempo (ms)','fontsize',12);
 ylabel('delta','fontsize',12);
